@@ -3,7 +3,6 @@ package parquet.utils;
 import org.apache.parquet.example.data.simple.SimpleGroup;
 import org.apache.parquet.schema.MessageType;
 import org.apache.parquet.schema.Type;
-
 import java.util.List;
 import java.util.Map;
 
@@ -24,13 +23,9 @@ public class Parquet {
         return data;
     }
 
-    public List<Type> getSchemaFields() {
-        return schemaFields;
-    }
+    public List<Type> getSchemaFields() { return schemaFields; }
 
-    public MessageType getSchema() {
-        return schema;
-    }
+    public MessageType getSchema() { return schema; }
 
     public Map<String, String> getKeyValueMetadata() {
         return keyValueMetadata;

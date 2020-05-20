@@ -13,7 +13,6 @@ import org.apache.parquet.io.MessageColumnIO;
 import org.apache.parquet.io.RecordReader;
 import org.apache.parquet.schema.MessageType;
 import org.apache.parquet.schema.Type;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

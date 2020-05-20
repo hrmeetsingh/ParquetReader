@@ -1,23 +1,14 @@
 package parquet.utils;
 
 import org.apache.parquet.schema.MessageType;
-import org.apache.parquet.schema.PrimitiveType;
 import org.apache.parquet.schema.Type;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-
-
-
 public class CSVSchemaReaderUtils {
-
-
-
     private static final BufferedReader readCSVFile(String filepath) throws IOException{
             return new BufferedReader(new FileReader(filepath));
     }

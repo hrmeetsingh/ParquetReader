@@ -3,8 +3,6 @@ package parquet.utils;
 import org.apache.parquet.schema.PrimitiveType;
 import org.apache.parquet.schema.Type;
 
-import java.util.HashMap;
-
 public class CSVSchemaField {
     String fieldName;
     String fieldPrimitiveType;

@@ -2,9 +2,6 @@ package parquet.reader;
 
 import org.apache.parquet.schema.MessageType;
 import parquet.utils.CSVSchemaReaderUtils;
-import parquet.utils.Parquet;
-import parquet.utils.ParquetReaderUtils;
-
 import java.io.IOException;
 
 public class CSVSchemaReader {
@@ -13,8 +10,6 @@ public class CSVSchemaReader {
         System.out.println("User's current working directory is: " + currentDirectory);
 
         MessageType csvSchema = CSVSchemaReaderUtils.csvSchema(currentDirectory + "/src/main/resources/testschema.csv");
-
         System.out.println(csvSchema.toString());
-
     }
 }
