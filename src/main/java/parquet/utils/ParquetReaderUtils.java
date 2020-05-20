@@ -46,6 +46,6 @@ public class ParquetReaderUtils {
             }
         }
         reader.close();
-        return new Parquet(simpleGroups, fields, keyValueMetadata);
+        return new Parquet(simpleGroups, fields, keyValueMetadata, schema);
     }
 }

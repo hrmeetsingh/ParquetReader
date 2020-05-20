@@ -1,5 +1,6 @@
 package parquet.reader;
 
+import org.apache.parquet.schema.MessageType;
 import parquet.utils.ParquetReaderUtils;
 import parquet.utils.Parquet;
 import org.apache.parquet.example.data.simple.SimpleGroup;
@@ -15,8 +16,9 @@ public class ParquetReader{
         System.out.println("User's current working directory is: "+currentDirectory);
 
         Parquet parquet = ParquetReaderUtils.getParquetData(currentDirectory+"/src/main/resources/part-00000.parquet");
-        List<Type> schemalist = parquet.getSchema();
+        List<Type> schemaFieldList = parquet.getSchemaFields();
         List<SimpleGroup> datagroup = parquet.getData();
+        MessageType schema = parquet.getSchema();
         Map<String, String> keyValueFileMetaData = parquet.getKeyValueMetadata();
 
         System.out.println("\nData ---->");
@@ -25,11 +27,13 @@ public class ParquetReader{
         }
 
         System.out.println("\nSchema ---->");
-        for (Type schema: schemalist){
-            System.out.println("Name: "+schema.getName());
-            System.out.println("Original Type: "+schema.getOriginalType());
-            System.out.println("Primitive Type: "+schema.asPrimitiveType());
+        for (Type schemaField: schemaFieldList){
+            System.out.println("Name: "+schemaField.getName());
+            System.out.println("Original Type: "+schemaField.getOriginalType());
+            System.out.println("Primitive Type: "+schemaField.asPrimitiveType());
         }
+
+        System.out.println("\n Schema toString() ------> "+ schema.toString());
 
         System.out.println("\nFile metadata key values ---->");
         for (Map.Entry<String, String> entry : keyValueFileMetaData.entrySet()) {
